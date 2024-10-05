@@ -11,17 +11,17 @@ pipeline{
                 }
             }
         stage("Checkout from SCM"){
-            steps {
+                steps {
                 git branch: 'main', 'credentialsID': 'github', url: 'https://github.com/kingjullien/registerapp'
-            }
+                }
         }
         stage("Build Application"){
-            steps {
+                steps {
                 sh "mvn clean package"
             }
         }
         stage("Test Application") {
-            steps{
+                steps{
                 sh "mvn test"
             }
         } 

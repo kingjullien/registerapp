@@ -6,11 +6,10 @@ pipeline{
     }
     stages{
         stage("Cleanup Workspace"){
-            steps {
+                steps {
                 cleanws()
+                }
             }
-            }
-        }
         stage("Checkout from SCM"){
             steps {
                 git branch: 'main', 'credentailsID': 'github', url: 'https://github.com/kingjullien/registerapp'
